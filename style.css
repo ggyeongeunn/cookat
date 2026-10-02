@@ -1,0 +1,151 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: #333;
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+}
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+img {
+  display: block;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+.wrap {
+  width: 500px;
+  min-height: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/* header */
+header {
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+}
+header .upper {
+  height: 60px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  padding: 10px;
+}
+.search {
+  width: calc(100% - 130px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.search p {
+  color: #bbb8b5;
+}
+.search img {
+  width: 20px;
+}
+/* tab */
+.tab {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  border-top: 1px solid #e5e5e5;
+}
+.tab li {
+  flex: 1;
+}
+.tab li a {
+  padding: 16px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+.tab li img {
+  transition: 0.2s;
+}
+.tab li img {
+  filter: grayscale(1) brightness(2.8);
+}
+.tab li:hover img,
+.tab li.on img {
+  filter: unset;
+  animation: tab 0.5s;
+}
+.tab li:hover p,
+.tab li.on p {
+  color: #46433f;
+}
+.tab li p {
+  color: #bbb8b5;
+}
+
+/* apply */
+.apply {
+  width: 270px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(50% + 150px), -50%);
+}
+.apply img {
+  width: 100%;
+  border-radius: 12px;
+}
+.apply .qr {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+.apply .qr img {
+  width: 60px;
+  margin-right: 10px;
+  border-radius: 12px;
+}
+
+.apply .qr-desc p span {
+  font-weight: 600;
+  margin-right: 4px;
+}
+.apply .qr-desc > span {
+  display: inline-block;
+  font-size: 13px;
+  padding-top: 6px;
+  color: #666;
+}
+
+/* animation */
+@keyframes tab {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
