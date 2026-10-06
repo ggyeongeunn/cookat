@@ -9,6 +9,20 @@
     <script>
       $(document).ready(function () {
         $(".tab li").eq(0).addClass("on");
+        $(".footer-tit").click(function () {
+          $(".footer-desc").slideToggle();
+          $(this).toggleClass("on");
+        });
+        $(window).scroll(function () {
+          if ($(document).scrollTop() > 150) {
+            $("aside").fadeIn();
+          } else {
+            $("aside").fadeOut();
+          }
+        });
+        $("aside").click(function () {
+          $("html").animate({ scrollTop: 0 });
+        });
       });
     </script>
   </head>
@@ -25,6 +39,10 @@
         </div>
         <nav>
           <a href="#">쿠캣추천</a>
+          <div class="text-animation">
+            <a href="#">가을타지말고</a>
+            <a href="#">쿠캣타세요</a>
+          </div>
           <a href="#">베스트</a>
           <a href="#">신상품</a>
           <a href="#">할인중</a>
@@ -33,11 +51,22 @@
       </header>
       <!-- main -->
       <main>
-        <section>banner</section>
+        <section class="banner">
+
+        </section>
         <section>category</section>
+        <section class="cs">
+          <div class="cs-desc">
+            <p>쿠캣 고객센터</p>
+            <span
+              >평일 10:00 - 16:00 (점심시간 12:30 - 13:30) <br />주말/공휴일
+              휴무</span
+            >
+          </div>
+          <a href="#">고객센터</a>
+        </section>
       </main>
-      <!-- footer -->
-      <footer></footer>
+      <!-- tab -->
       <ul class="tab">
         <li>
           <a href="#"
@@ -71,8 +100,45 @@
         </li>
       </ul>
       <aside>
-        <img src="" alt="" />
+        <img src="images/aside.svg" alt="aside" />
       </aside>
+      <!-- footer -->
+      <footer>
+        <p class="footer-tit">
+          (주) 쿠캣 사업자 정보 <img src="images/arrow_up.svg" alt="toggle" />
+        </p>
+        <div class="footer-info">
+          <ul class="footer-desc">
+            <li>대표자<span>이문주</span></li>
+            <li>
+              주소<span>서울특별시 강남구 봉은사로1길 42-19 (논현동) </span>
+            </li>
+            <li>
+              사업자등록번호<span>110-86-12995</span
+              ><a href="#" target="_blank" class="red">사업자정보 확인</a>
+            </li>
+            <li>통신판매업 신고번호<span>이문주</span></li>
+            <li>마케팅 제휴문의<span>marketing@cookat.co</span></li>
+            <li>영업 제휴문의<span>business@cookat.co</span></li>
+            <li>상품 입점문의<span>product@cookat.co</span></li>
+            <li>쿠캣신공 입점문의<span>newmarket@cookat.co</span></li>
+            <li>개인정보보호 책임자<span>주지석 (privacy@cookat.co)</span></li>
+            <li class="copyright">Copyright © 쿠캣. All rights reserved.</li>
+          </ul>
+          <div class="sns">
+            <a href="#"><img src="images/instagram.png" alt="sns" /></a>
+            <a href="#"><img src="images/facebook.png" alt="sns" /></a>
+            <a href="#"><img src="images/blog.png" alt="sns" /></a>
+            <a href="#"><img src="images/youtube.png" alt="sns" /></a>
+          </div>
+          <div class="link">
+            <a href="#">이용약관</a>
+            <a href="#" class="on">개인정보 처리방침</a>
+            <a href="#">사업자 할인몰</a>
+            <a href="#">고객센터</a>
+          </div>
+        </div>
+      </footer>
     </div>
     <div class="apply">
       <img src="images/apply.png" alt="apply" />
